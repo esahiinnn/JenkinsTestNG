@@ -93,7 +93,6 @@
                             <param>**/*.json</param>
                         </jsonFiles>
                         <!-- optional, defaults to outputDirectory if not specified -->
-                        <classificationDirectory>${project.build.directory}/default-cucumber-reports3.html</classificationDirectory>
                         <classificationFiles>
                             <!-- supports wildcard or name pattern -->
                             <param>sample.properties</param>
