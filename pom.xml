@@ -72,7 +72,7 @@
         <plugin>
             <groupId>net.masterthought</groupId>
             <artifactId>maven-cucumber-reporting</artifactId>
-            <version>(check version above)</version>
+            <version>5.0.0</version>
             <executions>
                 <execution>
                     <id>execution</id>
@@ -81,30 +81,18 @@
                         <goal>generate</goal>
                     </goals>
                     <configuration>
-                        <projectName>cucumber-jvm-example</projectName>
-                        <!-- optional, per documentation set this to "true" to bypass generation of Cucumber Reports entirely, defaults to false if not specified -->
+                        <projectName>JenkinsProject</projectName>
                         <skip>false</skip>
-                        <!-- output directory for the generated report -->
                         <outputDirectory>${project.build.directory}</outputDirectory>
-                        <!-- optional, defaults to outputDirectory if not specified -->
-                        <inputDirectory>${project.build.directory}/json-report</inputDirectory>
+                        <inputDirectory>${project.build.directory}</inputDirectory>
                         <jsonFiles>
-                            <!-- supports wildcard or name pattern -->
-                            <param>**/*.json</param>
+                            <param>**/json-report/*.json</param>
                         </jsonFiles>
-                        <!-- optional, defaults to outputDirectory if not specified -->
                         <classificationFiles>
                             <!-- supports wildcard or name pattern -->
                             <param>sample.properties</param>
                             <param>other.properties</param>
                         </classificationFiles>
-                        <parallelTesting>false</parallelTesting>
-                        <!-- optional, set true to group features by its Ids -->
-                        <mergeFeaturesById>false</mergeFeaturesById>
-                        <!-- optional, set true to get a final report with latest results of the same test from different test runs -->
-                        <mergeFeaturesWithRetest>false</mergeFeaturesWithRetest>
-                        <!-- optional, set true to fail build on test failures -->
-                        <checkBuildResult>false</checkBuildResult>
                     </configuration>
                 </execution>
             </executions>
